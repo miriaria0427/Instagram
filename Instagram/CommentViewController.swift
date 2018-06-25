@@ -65,7 +65,6 @@ class CommentViewController: UIViewController,UITableViewDataSource,UITableViewD
     // データの数（＝セルの数）を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let postComment = postData.comment
-        print(postComment.count)
         return postComment.count
     }
     
@@ -75,7 +74,6 @@ class CommentViewController: UIViewController,UITableViewDataSource,UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         //postDataの登録がある場合、データの内容をセルのテキストに登録する
         if([postData?.comment] != [[]]){
-            //print([[postData?.comment]])
             cell.textLabel?.text = postData?.comment[indexPath.row]["name"]
             cell.detailTextLabel?.text = postData?.comment[indexPath.row]["comment"]
         }

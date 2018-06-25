@@ -46,7 +46,6 @@ class PostTableViewCell: UITableViewCell {
         //コメント,ユーザ名(最新の投稿を１件表示)
         self.comment.text = postData.comment.last?["comment"]
         self.commentName.text = postData.comment.last?["name"]
-        print("name \(String(describing: self.commentName.text))")
 
         if postData.isLiked {
             let buttonImage = UIImage(named: "like_exist")
